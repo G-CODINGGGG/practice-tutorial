@@ -77,7 +77,8 @@ script = ExtResource("1_xeo28")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=830018459]
 sprite_frames = SubResource("SpriteFrames_0o0ue")
 autoplay = "default"
-frame_progress = 0.066116996
+frame = 5
+frame_progress = 0.52481115
 
 [node name="Kill Zone" parent="." unique_id=97381748 instance=ExtResource("2_wovta")]
 
