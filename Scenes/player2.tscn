@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://coik7uepcplt1"]
+
+[ext_resource type="Script" uid="uid://c1m0gj5fwl8cr" path="res://Scripts/player.gd" id="1_x88p5"]
+[ext_resource type="Texture2D" uid="uid://dx4mrkrrbsypt" path="res://ASSets/Custom Assets/WalkingOrangeSpriteSheet.png" id="2_udwdc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6mtmu"]
+atlas = ExtResource("2_udwdc")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5fhls"]
+atlas = ExtResource("2_udwdc")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8sl0u"]
+atlas = ExtResource("2_udwdc")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xrga1"]
+atlas = ExtResource("2_udwdc")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o6vle"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6mtmu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5fhls")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8sl0u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xrga1")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1jxqw"]
+radius = 5.0
+
+[node name="Player" type="CharacterBody2D" unique_id=1356678872]
+z_index = 5
+collision_layer = 2
+script = ExtResource("1_x88p5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1784036370]
+position = Vector2(0, -4.000004)
+scale = Vector2(0.390625, 0.4375)
+sprite_frames = SubResource("SpriteFrames_o6vle")
+animation = &"Idle"
+autoplay = "Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=106405128]
+position = Vector2(0, -6)
+shape = SubResource("CircleShape2D_1jxqw")
