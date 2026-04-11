@@ -71,7 +71,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_wovta"]
 radius = 6.0
 
-[node name="Node2D" type="Node2D" unique_id=943271360]
+[node name="Enemy" type="Node2D" unique_id=943271360]
 script = ExtResource("1_xeo28")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=830018459]
