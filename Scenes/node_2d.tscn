@@ -383,6 +383,7 @@ position = Vector2(-43, -322)
 
 [node name="Player" parent="." unique_id=1356678872 instance=ExtResource("6_wjtap")]
 scale = Vector2(2.3535337, 2.3535337)
+speed = 200.0
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=13567741]
 zoom = Vector2(3, 3)
