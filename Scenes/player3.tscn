@@ -1,5 +1,61 @@
 [gd_scene format=3 uid="uid://djsuedayfq4fj"]
 
-[ext_resource type="PackedScene" uid="uid://bpcvnylifc3pk" path="res://Scenes/player.tscn" id="1_v4bs0"]
+[ext_resource type="Script" uid="uid://c1m0gj5fwl8cr" path="res://Scripts/player.gd" id="1_x7my4"]
+[ext_resource type="Texture2D" uid="uid://cs5xxxu6ri464" path="res://ASSets/Custom Assets/MageSpriteSheet.png" id="2_kjl1f"]
 
-[node name="Player" unique_id=1356678872 instance=ExtResource("1_v4bs0")]
+[sub_resource type="AtlasTexture" id="AtlasTexture_epa1h"]
+atlas = ExtResource("2_kjl1f")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ec7m"]
+atlas = ExtResource("2_kjl1f")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_up0wh"]
+atlas = ExtResource("2_kjl1f")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_asi0g"]
+atlas = ExtResource("2_kjl1f")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s7igw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_epa1h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8ec7m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_up0wh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_asi0g")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x7my4"]
+radius = 3.0
+height = 11.38
+
+[node name="Player" type="CharacterBody2D" unique_id=1356678872]
+z_index = 5
+collision_layer = 2
+script = ExtResource("1_x7my4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1784036370]
+position = Vector2(1, -10)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_s7igw")
+animation = &"new_animation"
+autoplay = "new_animation"
+frame_progress = 0.40167183
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=106405128]
+position = Vector2(0, -6)
+shape = SubResource("CapsuleShape2D_x7my4")
